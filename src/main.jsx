@@ -8,3 +8,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
+
+if (window.AppbuildWrapper) {
+  window.AppbuildWrapper.ready
+    .then(() => window.AppbuildWrapper.push?.register?.())
+    .catch(() => {})
+}
